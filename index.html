@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Composer</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #fff;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .top-section {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            border-bottom: 2px solid #ccc;
+        }
+        .top-section form {
+            display: flex;
+            flex-direction: column;
+        }
+        .top-section label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .top-section input, .top-section textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .top-section button {
+            align-self: flex-start;
+            padding: 10px 20px;
+            background-color: #0078d4;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .top-section button:hover {
+            background-color: #005a9e;
+        }
+        .bottom-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f9f9;
+        }
+        .spinner {
+            display: none;
+            font-size: 24px;
+            color: #0078d4;
+        }
+        .response {
+            font-size: 16px;
+            color: #333;
+        }
+        .email-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #0078d4;
+            color: white;
+            padding: 10px;
+        }
+        .email-header button {
+            background-color: white;
+            color: #0078d4;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .email-header button:hover {
+            background-color: #f3f3f3;
+        }
+        .email-fields {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+        .email-fields input {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .name-box {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        .status-circle {
+            width: 10px;
+            height: 10px;
+            background-color: green;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .name-text {
+            color: black;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="email-header">
+            <button>▼</button>
+        </div>
+        <div class="top-section">
+            <form id="emailForm">
+                <div class="email-fields">
+                    <div class="name-box">
+                        <span class="status-circle"></span>
+                        <span class="name-text">John Doe, Jane Smith</span>
+                    </div>
+                    <div class="name-box">
+                        <span class="status-circle"></span>
+                        <span class="name-text">TradeSupportBot</span>
+                    </div>
+                </div>
+                <input type="text" id="subject" name="subject" required placeholder="Add a subject">
+                <textarea id="body" name="body" rows="10" required placeholder="Draft with Copilot (Alt+i)"></textarea>
+                <button type="button" id="sendButton">Send</button>
+            </form>
+        </div>
+        <div class="bottom-section">
+            <div class="spinner">...</div>
+            <div class="response" id="response"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
