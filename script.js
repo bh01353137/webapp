@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Hide spinner and show error
             spinner.style.display = 'none';
             responseDiv.textContent = 'Failed to send email. Please try again.';
+            console.error('Error sending email:', error); // Log the error to the console
         }
     });
 });
