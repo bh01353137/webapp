@@ -68,8 +68,15 @@
             color: #0078d4;
         }
         .response {
-            font-size: 16px;
-            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 100%;
+            box-sizing: border-box;
         }
         .email-header {
             display: flex;
@@ -147,7 +154,9 @@
         </div>
         <div class="bottom-section">
             <div class="spinner">...</div>
-            <div class="response" id="response"></div>
+            <div class="response" id="response" style="display: flex; flex-direction: column; align-items: flex-start; padding: 20px; background-color: #fff; border: 1px solid #ccc; border-radius: 8px; width: 100%; box-sizing: border-box;">
+                <!-- Initially empty, will be updated by JavaScript -->
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
