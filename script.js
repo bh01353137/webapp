@@ -14,16 +14,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch('https://ticket-agent.happycliff-de0ac07f.uksouth.azurecontainerapps.io/api/HttpExample?', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'text/plain',
                 },
-                body: JSON.stringify({ subject, body }),
+                body: `${subject}\n${body}`,
             });
 
-            const result = await response.json();
+            const result = await response.text();
 
             // Hide spinner and show response
             spinner.style.display = 'none';
-            responseDiv.textContent = result.message || 'Email sent successfully!';
+            responseDiv.textContent = result || 'Email sent successfully!';
         } catch (error) {
             // Hide spinner and show error
             spinner.style.display = 'none';
