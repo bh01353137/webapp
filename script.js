@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         responseDiv.textContent = '';
 
         try {
-            const response = await fetch('https://ticket-agent.happycliff-de0ac07f.uksouth.azurecontainerapps.io/api/HttpExample?', {
+            const response = await fetch('https://agent1-gk.azurewebsites.net/api/http_trigger?code=hhjxgoIVTDI01oPpcb5UHFcWPacC9FQiqugsCh8GtMj8AzFu1ystwQ==', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'text/plain',
