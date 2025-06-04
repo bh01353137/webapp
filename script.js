@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Hide spinner and show response
             spinner.style.display = 'none';
-            responseDiv.textContent = result || 'Email sent successfully!';
+            responseDiv.textContent = result;
         } catch (error) {
             // Hide spinner and show error
             spinner.style.display = 'none';
