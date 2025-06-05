@@ -20,10 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             const result = await response.text();
+            const formattedResult = result.replace(/\,/g, ',<br>').replace(/\./g, '.<br>');
 
             // Hide spinner and show response
             spinner.style.display = 'none';
-            responseDiv.textContent = result;
+            responseDiv.innerHTML = formattedResult;
         } catch (error) {
             // Hide spinner and show error
             spinner.style.display = 'none';
